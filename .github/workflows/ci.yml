@@ -19,5 +19,9 @@ jobs:
           java-version: '21'
           cache: maven
 
+      - name: List files for debug
+        run: ls -R
+
       - name: Run full Maven build & checks
         run: mvn clean verify
+        working-directory: ${{ github.workspace }}
